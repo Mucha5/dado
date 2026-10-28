@@ -6,7 +6,7 @@
 <style>
   body {
     font-family: system-ui, Arial, sans-serif;
-    background: #0f172a url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='12' y='50' font-size='34' font-family='Arial' fill='%23ffffff' fill-opacity='0.07' transform='rotate(-15 30 40)'>?</text><text x='72' y='108' font-size='26' font-family='Arial' fill='%23ffffff' fill-opacity='0.05' transform='rotate(12 80 100)'>?</text></svg>");
+    background: #0f172a;
     color: #e2e8f0;
     margin: 0;
     padding: 40px 20px;
@@ -88,17 +88,22 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
-  .tagline { font-size: 1.4em; font-weight: 700; letter-spacing: 2px; color: #93c5fd; margin: -10px 0 24px; }
-  .photo-slot { width: 260px; height: 260px; margin: 0 auto 24px; border: 2px dashed #475569; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 0.9em; overflow: hidden; }
+  .tagline { font-size: 1.6em; font-weight: 800; letter-spacing: 3px; color: #f8fafc; text-align: center; margin: 36px 0 10px; }
+  .stage { position: relative; width: 320px; height: 360px; margin: 0 auto 40px; }
+  .photo-slot { position: absolute; left: 50%; top: 50%; width: 190px; height: 190px; transform: translate(-50%,-50%); border: 2px dashed #64748b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 0.9em; overflow: hidden; background: rgba(15,23,42,0.6); }
   .photo-slot img { width: 100%; height: 100%; object-fit: cover; }
+  .q { position: absolute; color: #fff; font-weight: 800; font-family: Georgia, 'Times New Roman', serif; line-height: 1; user-select: none; text-shadow: 0 4px 14px rgba(0,0,0,0.5); }
+  .q1 { font-size: 120px; left: 0; top: 0; transform: rotate(-14deg); }
+  .q2 { font-size: 90px; right: 6px; top: 6px; transform: rotate(12deg); opacity: .95; }
+  .q3 { font-size: 105px; left: 6px; bottom: -4px; transform: rotate(10deg); }
+  .q4 { font-size: 125px; right: 0; bottom: -10px; transform: rotate(-8deg); }
   .hint { margin-top: 14px; font-size: 0.7em; color: #94a3b8; }
 </style>
 </head>
 <body>
-<div id="puzzle-page" class="container">
+<div id="puzzle-page">
+<div class="container">
   <h1>🔐 Riddle</h1>
-  <div class="tagline">Let's play DADO</div>
-  <div class="photo-slot" id="photo-slot">photo</div>
   <div class="code">52.2297° N, 21.0122° E</div>
   <div class="answer-box">
     <input type="text" id="answer" placeholder="Password..." maxlength="10">
@@ -106,6 +111,12 @@
     <div id="result"></div>
     <div class="hint">Hint: the password is not a city, but something bigger.</div>
   </div>
+</div>
+<div class="tagline">Let's play DADO</div>
+<div class="stage">
+  <div class="q q1">?</div><div class="q q2">?</div><div class="q q3">?</div><div class="q q4">?</div>
+  <div class="photo-slot" id="photo-slot">photo</div>
+</div>
 </div>
 <div id="mamut-page">
   <h1>Mamut</h1>

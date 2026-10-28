@@ -6,7 +6,7 @@
 <style>
   body {
     font-family: system-ui, Arial, sans-serif;
-    background: #0f172a;
+    background: #0f172a url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='12' y='50' font-size='34' font-family='Arial' fill='%23ffffff' fill-opacity='0.07' transform='rotate(-15 30 40)'>?</text><text x='72' y='108' font-size='26' font-family='Arial' fill='%23ffffff' fill-opacity='0.05' transform='rotate(12 80 100)'>?</text></svg>");
     color: #e2e8f0;
     margin: 0;
     padding: 40px 20px;
@@ -87,16 +87,24 @@
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
+
+  .tagline { font-size: 1.4em; font-weight: 700; letter-spacing: 2px; color: #93c5fd; margin: -10px 0 24px; }
+  .photo-slot { width: 260px; height: 260px; margin: 0 auto 24px; border: 2px dashed #475569; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 0.9em; overflow: hidden; }
+  .photo-slot img { width: 100%; height: 100%; object-fit: cover; }
+  .hint { margin-top: 14px; font-size: 0.7em; color: #94a3b8; }
 </style>
 </head>
 <body>
 <div id="puzzle-page" class="container">
   <h1>🔐 Riddle</h1>
+  <div class="tagline">Let's play DADO</div>
+  <div class="photo-slot" id="photo-slot">photo</div>
   <div class="code">52.2297° N, 21.0122° E</div>
   <div class="answer-box">
     <input type="text" id="answer" placeholder="Password..." maxlength="10">
     <button onclick="checkAnswer()">Check</button>
     <div id="result"></div>
+    <div class="hint">Hint: the password is not a city, but something bigger.</div>
   </div>
 </div>
 <div id="mamut-page">
